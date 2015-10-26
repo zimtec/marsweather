@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		286FCD361BDE88CB00A7AE54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FCD351BDE88CB00A7AE54 /* AppDelegate.swift */; };
+		286FCD381BDE88CB00A7AE54 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FCD371BDE88CB00A7AE54 /* FirstViewController.swift */; };
+		286FCD3A1BDE88CB00A7AE54 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FCD391BDE88CB00A7AE54 /* SecondViewController.swift */; };
+		286FCD3D1BDE88CB00A7AE54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286FCD3B1BDE88CB00A7AE54 /* Main.storyboard */; };
+		286FCD3F1BDE88CB00A7AE54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 286FCD3E1BDE88CB00A7AE54 /* Assets.xcassets */; };
+		286FCD421BDE88CB00A7AE54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286FCD401BDE88CB00A7AE54 /* LaunchScreen.storyboard */; };
+		286FCD4D1BDE88CB00A7AE54 /* MarsWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FCD4C1BDE88CB00A7AE54 /* MarsWeatherTests.swift */; };
+		286FCD581BDE88CB00A7AE54 /* MarsWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FCD571BDE88CB00A7AE54 /* MarsWeatherUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		286FCD491BDE88CB00A7AE54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 286FCD2A1BDE88CB00A7AE54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 286FCD311BDE88CB00A7AE54;
+			remoteInfo = MarsWeather;
+		};
+		286FCD541BDE88CB00A7AE54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 286FCD2A1BDE88CB00A7AE54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 286FCD311BDE88CB00A7AE54;
+			remoteInfo = MarsWeather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		286FCD321BDE88CB00A7AE54 /* MarsWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		286FCD351BDE88CB00A7AE54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		286FCD371BDE88CB00A7AE54 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		286FCD391BDE88CB00A7AE54 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		286FCD3C1BDE88CB00A7AE54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		286FCD3E1BDE88CB00A7AE54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		286FCD411BDE88CB00A7AE54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		286FCD431BDE88CB00A7AE54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		286FCD481BDE88CB00A7AE54 /* MarsWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarsWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		286FCD4C1BDE88CB00A7AE54 /* MarsWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsWeatherTests.swift; sourceTree = "<group>"; };
+		286FCD4E1BDE88CB00A7AE54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		286FCD531BDE88CB00A7AE54 /* MarsWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarsWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		286FCD571BDE88CB00A7AE54 /* MarsWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsWeatherUITests.swift; sourceTree = "<group>"; };
+		286FCD591BDE88CB00A7AE54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		286FCD2F1BDE88CB00A7AE54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		286FCD451BDE88CB00A7AE54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		286FCD501BDE88CB00A7AE54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		286FCD291BDE88CB00A7AE54 = {
+			isa = PBXGroup;
+			children = (
+				286FCD341BDE88CB00A7AE54 /* MarsWeather */,
+				286FCD4B1BDE88CB00A7AE54 /* MarsWeatherTests */,
+				286FCD561BDE88CB00A7AE54 /* MarsWeatherUITests */,
+				286FCD331BDE88CB00A7AE54 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		286FCD331BDE88CB00A7AE54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				286FCD321BDE88CB00A7AE54 /* MarsWeather.app */,
+				286FCD481BDE88CB00A7AE54 /* MarsWeatherTests.xctest */,
+				286FCD531BDE88CB00A7AE54 /* MarsWeatherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		286FCD341BDE88CB00A7AE54 /* MarsWeather */ = {
+			isa = PBXGroup;
+			children = (
+				286FCD351BDE88CB00A7AE54 /* AppDelegate.swift */,
+				286FCD371BDE88CB00A7AE54 /* FirstViewController.swift */,
+				286FCD391BDE88CB00A7AE54 /* SecondViewController.swift */,
+				286FCD3B1BDE88CB00A7AE54 /* Main.storyboard */,
+				286FCD3E1BDE88CB00A7AE54 /* Assets.xcassets */,
+				286FCD401BDE88CB00A7AE54 /* LaunchScreen.storyboard */,
+				286FCD431BDE88CB00A7AE54 /* Info.plist */,
+			);
+			path = MarsWeather;
+			sourceTree = "<group>";
+		};
+		286FCD4B1BDE88CB00A7AE54 /* MarsWeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				286FCD4C1BDE88CB00A7AE54 /* MarsWeatherTests.swift */,
+				286FCD4E1BDE88CB00A7AE54 /* Info.plist */,
+			);
+			path = MarsWeatherTests;
+			sourceTree = "<group>";
+		};
+		286FCD561BDE88CB00A7AE54 /* MarsWeatherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				286FCD571BDE88CB00A7AE54 /* MarsWeatherUITests.swift */,
+				286FCD591BDE88CB00A7AE54 /* Info.plist */,
+			);
+			path = MarsWeatherUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		286FCD311BDE88CB00A7AE54 /* MarsWeather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 286FCD5C1BDE88CB00A7AE54 /* Build configuration list for PBXNativeTarget "MarsWeather" */;
+			buildPhases = (
+				286FCD2E1BDE88CB00A7AE54 /* Sources */,
+				286FCD2F1BDE88CB00A7AE54 /* Frameworks */,
+				286FCD301BDE88CB00A7AE54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarsWeather;
+			productName = MarsWeather;
+			productReference = 286FCD321BDE88CB00A7AE54 /* MarsWeather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		286FCD471BDE88CB00A7AE54 /* MarsWeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 286FCD5F1BDE88CB00A7AE54 /* Build configuration list for PBXNativeTarget "MarsWeatherTests" */;
+			buildPhases = (
+				286FCD441BDE88CB00A7AE54 /* Sources */,
+				286FCD451BDE88CB00A7AE54 /* Frameworks */,
+				286FCD461BDE88CB00A7AE54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				286FCD4A1BDE88CB00A7AE54 /* PBXTargetDependency */,
+			);
+			name = MarsWeatherTests;
+			productName = MarsWeatherTests;
+			productReference = 286FCD481BDE88CB00A7AE54 /* MarsWeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		286FCD521BDE88CB00A7AE54 /* MarsWeatherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 286FCD621BDE88CB00A7AE54 /* Build configuration list for PBXNativeTarget "MarsWeatherUITests" */;
+			buildPhases = (
+				286FCD4F1BDE88CB00A7AE54 /* Sources */,
+				286FCD501BDE88CB00A7AE54 /* Frameworks */,
+				286FCD511BDE88CB00A7AE54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				286FCD551BDE88CB00A7AE54 /* PBXTargetDependency */,
+			);
+			name = MarsWeatherUITests;
+			productName = MarsWeatherUITests;
+			productReference = 286FCD531BDE88CB00A7AE54 /* MarsWeatherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		286FCD2A1BDE88CB00A7AE54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Claus Zimmermann";
+				TargetAttributes = {
+					286FCD311BDE88CB00A7AE54 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					286FCD471BDE88CB00A7AE54 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 286FCD311BDE88CB00A7AE54;
+					};
+					286FCD521BDE88CB00A7AE54 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 286FCD311BDE88CB00A7AE54;
+					};
+				};
+			};
+			buildConfigurationList = 286FCD2D1BDE88CB00A7AE54 /* Build configuration list for PBXProject "MarsWeather" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 286FCD291BDE88CB00A7AE54;
+			productRefGroup = 286FCD331BDE88CB00A7AE54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				286FCD311BDE88CB00A7AE54 /* MarsWeather */,
+				286FCD471BDE88CB00A7AE54 /* MarsWeatherTests */,
+				286FCD521BDE88CB00A7AE54 /* MarsWeatherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		286FCD301BDE88CB00A7AE54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				286FCD421BDE88CB00A7AE54 /* LaunchScreen.storyboard in Resources */,
+				286FCD3F1BDE88CB00A7AE54 /* Assets.xcassets in Resources */,
+				286FCD3D1BDE88CB00A7AE54 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		286FCD461BDE88CB00A7AE54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		286FCD511BDE88CB00A7AE54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		286FCD2E1BDE88CB00A7AE54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				286FCD3A1BDE88CB00A7AE54 /* SecondViewController.swift in Sources */,
+				286FCD361BDE88CB00A7AE54 /* AppDelegate.swift in Sources */,
+				286FCD381BDE88CB00A7AE54 /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		286FCD441BDE88CB00A7AE54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				286FCD4D1BDE88CB00A7AE54 /* MarsWeatherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		286FCD4F1BDE88CB00A7AE54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				286FCD581BDE88CB00A7AE54 /* MarsWeatherUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		286FCD4A1BDE88CB00A7AE54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 286FCD311BDE88CB00A7AE54 /* MarsWeather */;
+			targetProxy = 286FCD491BDE88CB00A7AE54 /* PBXContainerItemProxy */;
+		};
+		286FCD551BDE88CB00A7AE54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 286FCD311BDE88CB00A7AE54 /* MarsWeather */;
+			targetProxy = 286FCD541BDE88CB00A7AE54 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		286FCD3B1BDE88CB00A7AE54 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				286FCD3C1BDE88CB00A7AE54 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		286FCD401BDE88CB00A7AE54 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				286FCD411BDE88CB00A7AE54 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		286FCD5A1BDE88CB00A7AE54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		286FCD5B1BDE88CB00A7AE54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		286FCD5D1BDE88CB00A7AE54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MarsWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.zimtech.touch.MarsWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		286FCD5E1BDE88CB00A7AE54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MarsWeather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.zimtech.touch.MarsWeather;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		286FCD601BDE88CB00A7AE54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MarsWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.zimtech.touch.MarsWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarsWeather.app/MarsWeather";
+			};
+			name = Debug;
+		};
+		286FCD611BDE88CB00A7AE54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MarsWeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.zimtech.touch.MarsWeatherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarsWeather.app/MarsWeather";
+			};
+			name = Release;
+		};
+		286FCD631BDE88CB00A7AE54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MarsWeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.zimtech.touch.MarsWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MarsWeather;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		286FCD641BDE88CB00A7AE54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MarsWeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.zimtech.touch.MarsWeatherUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MarsWeather;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		286FCD2D1BDE88CB00A7AE54 /* Build configuration list for PBXProject "MarsWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				286FCD5A1BDE88CB00A7AE54 /* Debug */,
+				286FCD5B1BDE88CB00A7AE54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		286FCD5C1BDE88CB00A7AE54 /* Build configuration list for PBXNativeTarget "MarsWeather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				286FCD5D1BDE88CB00A7AE54 /* Debug */,
+				286FCD5E1BDE88CB00A7AE54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		286FCD5F1BDE88CB00A7AE54 /* Build configuration list for PBXNativeTarget "MarsWeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				286FCD601BDE88CB00A7AE54 /* Debug */,
+				286FCD611BDE88CB00A7AE54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		286FCD621BDE88CB00A7AE54 /* Build configuration list for PBXNativeTarget "MarsWeatherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				286FCD631BDE88CB00A7AE54 /* Debug */,
+				286FCD641BDE88CB00A7AE54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 286FCD2A1BDE88CB00A7AE54 /* Project object */;
+}
