@@ -9,43 +9,102 @@
 import UIKit
 
 class CurrentMarsWeatherTableViewController: UITableViewController {
-
+    
+    var jsonMarsReportValues : JSONValue?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.title = "Mars Weather"
+        
+        let rightButton = UIBarButtonItem(title: "Reload", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("loadMarsWeatherData"))
+        
+        self.navigationItem.rightBarButtonItem = rightButton
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func showError() {
+        let alert = UIAlertController(title: "Error", message: "Error while loading data", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+            // try to reload the weather data
+            self.loadMarsWeatherData()
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    func loadMarsWeatherData() {
+        self.jsonMarsReportValues = nil
+        self.tableView.reloadData()
+        MarsWeatherDownloadManager.sharedInstance.retrieveLatestMarsWeather({(jsonValue) -> Void in
+            // mars weather data has been successfully retrieved
+            if let jsonReportValue = jsonValue["report"] {
+                // we  work in this controller only with the report child values. So for convenience reasons set a reference to the report here
+                self.jsonMarsReportValues = jsonReportValue
+                
+                dispatch_sync(dispatch_get_main_queue()){
+                    // make sure reloading table is executed in the main queue, we update the screen here
+                    self.tableView.reloadData()
+                }
+            }
+            },  retrieveErrorHandler: { () -> Void in
+                //error while retrieving weather data
+                dispatch_sync(dispatch_get_main_queue()){
+                    // make sure gui code gets called on the main thread
+                    self.showError()
+                }
+        })
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        self.loadMarsWeatherData()
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return self.jsonMarsReportValues != nil ? 1 : 0;
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        var count = 0
+        
+        if let sortedKeys = self.jsonMarsReportValues?.sortedKeys {
+            count = sortedKeys.count
+        }
+        
+
+        return count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("CurrentMarsWeatherTableCell", forIndexPath: indexPath)
 
-        // Configure the cell...
-
+        
+        if let jsonReport = self.jsonMarsReportValues {
+            if let parameterKeys = jsonReport.sortedKeys {
+                let parameterName = parameterKeys[indexPath.row]
+                cell.textLabel?.text = parameterName
+                cell.detailTextLabel?.text = jsonReport[parameterName]?.valueAsString
+            }
+        } 
+        
+        
         return cell
     }
-    */
+    
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Current Weather data"
+    }
 
     /*
     // Override to support conditional editing of the table view.

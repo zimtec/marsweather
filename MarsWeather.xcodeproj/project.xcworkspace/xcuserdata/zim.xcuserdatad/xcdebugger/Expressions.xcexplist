@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ArchivedMarsWeatherTableViewController.numberOfSectionsInTableView(UITableView) -&gt; Int:ArchivedMarsWeatherTableViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CurrentMarsWeatherTableViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:CurrentMarsWeatherTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "jsonWeatherValues[&quot;report&quot;]!.object!.keys">
+            </PersistentString>
+            <PersistentString
+               value = "indexPath.section">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ArchivedMarsWeatherTableViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:ArchivedMarsWeatherTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "resultArray[indexPath.section][parameterName]">
+            </PersistentString>
+            <PersistentString
+               value = "self.jsonMarsArchiveResultValues![indexPath.section]![parameterName]!.string">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
