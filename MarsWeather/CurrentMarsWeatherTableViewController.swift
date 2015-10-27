@@ -118,7 +118,7 @@ class CurrentMarsWeatherTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Current Weather data"
+        return "Latest Weather data"
     }
 
     /*
