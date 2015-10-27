@@ -10,7 +10,7 @@ import UIKit
 
 class CurrentMarsWeatherTableViewController: UITableViewController {
     
-    var jsonMarsReportValues : JSONValue?
+    var jsonMarsReportObject : JSONValue?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +29,12 @@ class CurrentMarsWeatherTableViewController: UITableViewController {
     }
     
     func showError() {
-        let alert = UIAlertController(title: "Error", message: "Error while loading data", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+        let alert = UIAlertController(title: "Error", message: "Error while loading data. Make sure you are connected to the internet.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Retry", style: .Default, handler: { action in
+           
             // try to reload the weather data
             self.loadMarsWeatherData()
+            
         }))
         self.presentViewController(alert, animated: true, completion: nil)
         
@@ -40,23 +42,30 @@ class CurrentMarsWeatherTableViewController: UITableViewController {
     
     
     func loadMarsWeatherData() {
-        self.jsonMarsReportValues = nil
+        // set previous json data to nil in order to reset the table
+        self.jsonMarsReportObject = nil
+        
+        // reload table with blank data
         self.tableView.reloadData()
+        
         MarsWeatherDownloadManager.sharedInstance.retrieveLatestMarsWeather({(jsonValue) -> Void in
             // mars weather data has been successfully retrieved
-            if let jsonReportValue = jsonValue["report"] {
-                // we  work in this controller only with the report child values. So for convenience reasons set a reference to the report here
-                self.jsonMarsReportValues = jsonReportValue
+            if let jsonReportObject = jsonValue["report"] {
                 
+                // in this controller we  work  only with the json report object. So for convenience reasons set a reference to the report object here
+                self.jsonMarsReportObject = jsonReportObject
+
+                // make sure reloading table is executed on the main queue since we update the screen here
                 dispatch_sync(dispatch_get_main_queue()){
-                    // make sure reloading table is executed in the main queue, we update the screen here
                     self.tableView.reloadData()
                 }
+                
             }
             },  retrieveErrorHandler: { () -> Void in
                 //error while retrieving weather data
+                
+                // make sure gui code gets called on the main thread
                 dispatch_sync(dispatch_get_main_queue()){
-                    // make sure gui code gets called on the main thread
                     self.showError()
                 }
         })
@@ -70,13 +79,15 @@ class CurrentMarsWeatherTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.jsonMarsReportValues != nil ? 1 : 0;
+        // only if the jsonMarsReportObject is valid, weather data will be shown in the first section
+        return self.jsonMarsReportObject != nil ? 1 : 0;
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count = 0
         
-        if let sortedKeys = self.jsonMarsReportValues?.sortedKeys {
+        if let sortedKeys = self.jsonMarsReportObject?.sortedKeys {
+            // count the json child attributes of the report object. Each child will be displayed in one row
             count = sortedKeys.count
         }
         
@@ -88,11 +99,18 @@ class CurrentMarsWeatherTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CurrentMarsWeatherTableCell", forIndexPath: indexPath)
 
-        if let jsonReport = self.jsonMarsReportValues {
-            if let parameterKeys = jsonReport.sortedKeys {
-                let parameterName = parameterKeys[indexPath.row]
-                cell.textLabel?.text = parameterName
-                cell.detailTextLabel?.text = jsonReport[parameterName]?.valueAsString
+        if let jsonReportObject = self.jsonMarsReportObject {
+            
+            // get all child attributes for the json report object and store them in attributeNames (sorted)
+            if let attributeNames = jsonReportObject.sortedKeys {
+                
+                // get the json atttribute name of the report child for the current row and store it in attributeName
+                let attributeName = attributeNames[indexPath.row]
+                
+                cell.textLabel?.text = attributeName
+                
+                // get the json value for the corresponding json attribute name
+                cell.detailTextLabel?.text = jsonReportObject[attributeName]?.valueAsString
             }
         }
         return cell

@@ -10,7 +10,7 @@ import UIKit
 
 class ArchivedMarsWeatherTableViewController: UITableViewController {
 
-    var jsonMarsArchiveResultValues : JSONValue?
+    var jsonMarsArchiveResultObject : JSONValue?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +28,8 @@ class ArchivedMarsWeatherTableViewController: UITableViewController {
 
    
     func showError() {
-        let alert = UIAlertController(title: "Error", message: "Error while loading archived data", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+        let alert = UIAlertController(title: "Error", message: "Error while loading archived data. Make sure you are connected to the internet", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Retry", style: .Default, handler: { action in
             // try to reload the weather data
             self.loadMarsArchivedData()
         }))
@@ -39,23 +39,31 @@ class ArchivedMarsWeatherTableViewController: UITableViewController {
     
     
     func loadMarsArchivedData() {
-        self.jsonMarsArchiveResultValues = nil
+        // set previous json data to nil in order to reset the table
+        self.jsonMarsArchiveResultObject = nil
+        
+        // reload the table with blank data
         self.tableView.reloadData()
+        
         MarsWeatherDownloadManager.sharedInstance.retrieveArchivedMarsWeather({(jsonValue) -> Void in
+            
             // mars weather archive data has been successfully retrieved
-            if let jsonResultValue = jsonValue["results"] {
-                // we  work in this controller only with the result child values. So for convenience reasons set a reference to the result json element here
-                self.jsonMarsArchiveResultValues = jsonResultValue
+            if let jsonResultObject = jsonValue["results"] {
                 
+                // in this controller we will work only with the json object 'results'. So for convenience reasons set a reference to the 'results' json object here
+                self.jsonMarsArchiveResultObject = jsonResultObject
+
+                // make sure reloading the table will be executed on the main queue since we update the screen here
                 dispatch_sync(dispatch_get_main_queue()){
-                    // make sure reloading table is executed in the main queue since we update the screen here
                     self.tableView.reloadData()
                 }
+                
             }
             },  retrieveErrorHandler: { () -> Void in
                 //error while retrieving weather data
+                
+                // make sure gui code gets called on the main queue since we update the screen
                 dispatch_sync(dispatch_get_main_queue()){
-                    // make sure gui code gets called on the main thread
                     self.showError()
                 }
         })
@@ -72,7 +80,8 @@ class ArchivedMarsWeatherTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         var resultCount = 0
         
-        if let resultsArray = self.jsonMarsArchiveResultValues?.array {
+        if let resultsArray = self.jsonMarsArchiveResultObject?.array {
+            // Count the number of child array entries for the json object 'result'. This value will determine the number of sections in the table
             resultCount = resultsArray.count
         }
         
@@ -82,7 +91,8 @@ class ArchivedMarsWeatherTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var numberOfRowsInSection = 0
         
-        if let availableParameters = self.jsonMarsArchiveResultValues?[section]?.sortedKeys {
+        if let availableParameters = self.jsonMarsArchiveResultObject?[section]?.sortedKeys {
+            // Count the number of json attributes for the json array entry corresponding to the current section. This will determine the number of rows in the table section
             numberOfRowsInSection = availableParameters.count
         }
         
@@ -93,12 +103,18 @@ class ArchivedMarsWeatherTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("archivedMarsWeatherCell", forIndexPath: indexPath)
 
-        if let resultArray = self.jsonMarsArchiveResultValues?.array {
-            if let parameters = resultArray[indexPath.section].sortedKeys {
-                let parameterName = parameters[indexPath.row]
-                cell.textLabel?.text = parameterName
-                cell.detailTextLabel?.text = self.jsonMarsArchiveResultValues?[indexPath.section]?[parameterName]?.valueAsString
+        if let resultArray = self.jsonMarsArchiveResultObject?.array {
+            
+            // get the json attribute names for the corresponding json array entry and store a reference to it in jsonAttributeNames (sorted)
+            if let jsonAttributeNames = resultArray[indexPath.section].sortedKeys {
                 
+                // get the corresponding attribute name for the current row and store it in jsonAttributeName
+                let jsonAttributeName = jsonAttributeNames[indexPath.row]
+                
+                cell.textLabel?.text = jsonAttributeName
+                
+                // set the detail label to the json value corresponding to the jsonAttributeName
+                cell.detailTextLabel?.text = self.jsonMarsArchiveResultObject?[indexPath.section]?[jsonAttributeName]?.valueAsString
             }
         }
         
@@ -109,11 +125,14 @@ class ArchivedMarsWeatherTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var sectionTitle = ""
         
-        if let resultArray = self.jsonMarsArchiveResultValues?.array {
+        if let resultArray = self.jsonMarsArchiveResultObject?.array {
             if let jsonArchivedSample = resultArray[section].object {
+                
+                // use the terrestrial date for the section header
                 if let terrestialDate = jsonArchivedSample["terrestrial_date"]?.string {
                     sectionTitle = terrestialDate
                 }
+                
             }
         }
         
