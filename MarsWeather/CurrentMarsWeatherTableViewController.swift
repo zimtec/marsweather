@@ -88,16 +88,13 @@ class CurrentMarsWeatherTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CurrentMarsWeatherTableCell", forIndexPath: indexPath)
 
-        
         if let jsonReport = self.jsonMarsReportValues {
             if let parameterKeys = jsonReport.sortedKeys {
                 let parameterName = parameterKeys[indexPath.row]
                 cell.textLabel?.text = parameterName
                 cell.detailTextLabel?.text = jsonReport[parameterName]?.valueAsString
             }
-        } 
-        
-        
+        }
         return cell
     }
     

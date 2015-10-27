@@ -52,8 +52,8 @@ class MarsWeatherDownloadManager {
      
         let task = session.dataTaskWithURL(url, completionHandler: {(data :NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             if let retrievedData = data {
-                let jsonString = String(data: retrievedData, encoding: NSUTF8StringEncoding)
-                print(jsonString)
+                //let jsonString = String(data: retrievedData, encoding: NSUTF8StringEncoding)
+                //print(jsonString)
                 let jsonDictionary = (try! NSJSONSerialization.JSONObjectWithData(retrievedData, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
                 if let json = JSONValue.fromObject(jsonDictionary) {                retrieveCompletionHandler(jsonValue: json)
                 } else {

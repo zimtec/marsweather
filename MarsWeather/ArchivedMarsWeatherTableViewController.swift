@@ -93,8 +93,6 @@ class ArchivedMarsWeatherTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("archivedMarsWeatherCell", forIndexPath: indexPath)
 
-        
-        
         if let resultArray = self.jsonMarsArchiveResultValues?.array {
             if let parameters = resultArray[indexPath.section].sortedKeys {
                 let parameterName = parameters[indexPath.row]
@@ -103,10 +101,6 @@ class ArchivedMarsWeatherTableViewController: UITableViewController {
                 
             }
         }
-        
-
-        
-        
         
         return cell
     }
